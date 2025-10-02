@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 270 60% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 270 60% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 60% 15%;
+
+    /* Primary Purple - vibrant and empowering */
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 262 83% 68%;
+    
+    /* Deep purple for depth */
+    --primary-deep: 262 61% 36%;
+    --primary-deep-foreground: 0 0% 100%;
+
+    /* Lavender accent */
+    --secondary: 270 60% 85%;
+    --secondary-foreground: 270 60% 15%;
+
+    --muted: 270 20% 96%;
+    --muted-foreground: 270 10% 45%;
+
+    --accent: 270 70% 75%;
+    --accent-foreground: 270 60% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 20% 90%;
+    --input: 270 20% 90%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(270 70% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(262 83% 58% / 0.95), hsl(270 70% 75% / 0.9));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(270 60% 98%));
+
+    /* Shadows with purple glow */
+    --shadow-glow: 0 8px 32px hsl(262 83% 58% / 0.3);
+    --shadow-card: 0 4px 16px hsl(270 20% 60% / 0.1);
+    
+    /* Animation timing */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Fade-in animation on scroll */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide up animation */
+  .slide-up {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Counter animation */
+  @keyframes countUp {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Parallax container */
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

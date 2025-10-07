@@ -11,10 +11,10 @@ import volunteersImage from "@/assets/volunteers.jpg";
 
 const Home = () => {
   const stats = [
-    { icon: Package, value: 5000, suffix: "+", label: "Care Packages Delivered" },
-    { icon: Users, value: 350, suffix: "+", label: "Active Volunteers" },
-    { icon: Heart, value: 1200, suffix: "+", label: "Families Helped" },
-    { icon: Calendar, value: 75, suffix: "+", label: "Events Hosted" },
+    { icon: Package, value: 1000, suffix: "+", label: "Care Packages Delivered" },
+    { icon: Users, value: 100, suffix: "+", label: "Active Volunteers" },
+    { icon: Heart, value: 200, suffix: "+", label: "Families Impacted" },
+    { icon: Calendar, value: 5, suffix: "+", label: "Events Hosted" },
   ];
 
   const impactAreas = [
@@ -53,10 +53,11 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto px-4 z-10 text-center text-white">
-          <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 animate-fade-in">
-            Bringing Comfort, Dignity, and Hope
+          <h1 className="text-5xl md:text-9xl font-heading font-bold mb-6 animate-fade-in">
+            All For Alzheimer's
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-95 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            
             Supporting Alzheimer's patients and their families with care packages and compassionate community action.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>

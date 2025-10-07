@@ -6,10 +6,9 @@ import volunteersImage from "@/assets/volunteers.jpg";
 
 const About = () => {
   const milestones = [
-    { year: "2015", event: "Founded", description: "Started at age 9 with volunteer work" },
+    { year: "2015", event: "Conception", description: "Started at age 9 with volunteer work" },
     { year: "2018", event: "First Event", description: "Organized first care package assembly" },
-    { year: "2020", event: "Nonprofit Status", description: "Achieved 501(c)(3) status" },
-    { year: "2023", event: "Vanderbilt Relaunch", description: "Expanded operations at university" },
+    { year: "2023", event: "Nonprofit Status", description: "Achieved 501(c)(3) status" },
     { year: "2024", event: "5000+ Packages", description: "Milestone achievement in care delivery" },
   ];
 

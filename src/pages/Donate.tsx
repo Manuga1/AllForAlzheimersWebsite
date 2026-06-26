@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Heart, Package, Users, Sparkles, CheckCircle2 } from "lucide-react";
+import { Heart, Package, Users, Sparkles, CheckCircle2, Copy } from "lucide-react";
 import { toast } from "sonner";
 
 const Donate = () => {
@@ -45,22 +45,28 @@ const Donate = () => {
     },
   ];
 
-  const handleDonate = () => {
-    const finalAmount = amount === "custom" ? parseFloat(customAmount) : amount;
-    if (isNaN(finalAmount) || finalAmount <= 0) {
+  const finalAmount = amount === "custom" ? parseFloat(customAmount) : amount;
+  const isValidAmount = !isNaN(finalAmount) && finalAmount > 0;
+
+  const handleVenmo = () => {
+    if (!isValidAmount) {
       toast.error("Please enter a valid donation amount");
       return;
     }
+    window.open("https://venmo.com/u/allforalzheimers", "_blank");
+  };
 
-    // PayPal integration would go here
-    toast.success(`Thank you for your ${donationType} donation of $${finalAmount}!`, {
-      description: "Redirecting to PayPal...",
-    });
-    
-    // Simulate PayPal redirect
-    setTimeout(() => {
-      console.log("Redirecting to PayPal for", finalAmount);
-    }, 1500);
+  const handlePayPal = () => {
+    if (!isValidAmount) {
+      toast.error("Please enter a valid donation amount");
+      return;
+    }
+    toast.info("PayPal link coming soon!");
+  };
+
+  const copyZelle = () => {
+    navigator.clipboard.writeText("515-525-3272");
+    toast.success("Zelle phone number copied to clipboard!");
   };
 
   return (
@@ -200,17 +206,42 @@ const Donate = () => {
                 </CardContent>
               </Card>
 
-              {/* Donate Button */}
-              <Button
-                variant="hero"
-                size="lg"
-                className="w-full text-lg"
-                onClick={handleDonate}
-              >
-                <Heart className="mr-2 h-5 w-5" />
-                Donate {amount === "custom" && customAmount ? `$${customAmount}` : `$${amount}`}
-                {donationType === "monthly" && " Monthly"}
-              </Button>
+              {/* Payment Methods */}
+              <div className="space-y-4">
+                <Label className="text-lg font-semibold">Choose Payment Method</Label>
+                <div className="grid grid-cols-1 gap-3">
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    className="w-full text-lg"
+                    onClick={handleVenmo}
+                  >
+                    <Heart className="mr-2 h-5 w-5" />
+                    Donate {isValidAmount ? `$${finalAmount}` : ""} via Venmo
+                  </Button>
+
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full text-lg"
+                    onClick={handlePayPal}
+                  >
+                    Donate {isValidAmount ? `$${finalAmount}` : ""} via PayPal
+                  </Button>
+
+                  <button
+                    type="button"
+                    onClick={copyZelle}
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 px-8 text-lg w-full"
+                  >
+                    <Copy className="mr-2 h-5 w-5" />
+                    Copy Zelle Number
+                  </button>
+                </div>
+                <p className="text-xs text-center text-muted-foreground">
+                  For Zelle, send to <span className="font-semibold">515-525-3272</span> using your bank app.
+                </p>
+              </div>
 
               <p className="text-sm text-center text-muted-foreground">
                 AllForAlzheimer's is a 501(c)(3) nonprofit. Your donation is tax-deductible.

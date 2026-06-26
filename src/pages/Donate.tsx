@@ -56,13 +56,6 @@ const Donate = () => {
     window.open("https://venmo.com/u/allforalzheimers", "_blank");
   };
 
-  const handlePayPal = () => {
-    if (!isValidAmount) {
-      toast.error("Please enter a valid donation amount");
-      return;
-    }
-    toast.info("PayPal link coming soon!");
-  };
 
   const copyZelle = () => {
     navigator.clipboard.writeText("515-525-3272");

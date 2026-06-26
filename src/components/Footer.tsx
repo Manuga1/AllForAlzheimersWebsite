@@ -30,8 +30,7 @@ const Footer = () => {
                 { name: "Home", path: "/" },
                 { name: "About Us", path: "/about" },
                 { name: "Our Mission", path: "/about#mission" },
-                { name: "Gallery", path: "/gallery" },
-                { name: "Events", path: "/events" },
+                { name: "Contact Us", path: "/contact" },
               ].map((link) => (
                 <li key={link.path}>
                   <Link
@@ -73,22 +72,22 @@ const Footer = () => {
             <h3 className="font-heading font-semibold text-lg mb-4">Contact</h3>
             <div className="space-y-3">
               <a
-                href="mailto:info@allforalzheimers.org"
+                href="mailto:allforalzheimers@gmail.com"
                 className="flex items-center gap-2 text-sm opacity-90 hover:opacity-100 transition-opacity"
               >
                 <Mail className="h-4 w-4" />
-                info@allforalzheimers.org
+                allforalzheimers@gmail.com
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:5155253272"
                 className="flex items-center gap-2 text-sm opacity-90 hover:opacity-100 transition-opacity"
               >
                 <Phone className="h-4 w-4" />
-                (123) 456-7890
+                515-525-3272
               </a>
               <div className="flex items-center gap-2 text-sm opacity-90">
                 <MapPin className="h-4 w-4" />
-                Nashville, TN
+                West Des Moines, Iowa
               </div>
             </div>
 

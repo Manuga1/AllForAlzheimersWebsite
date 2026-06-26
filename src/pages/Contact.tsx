@@ -41,19 +41,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@allforalzheimers.org",
-      link: "mailto:info@allforalzheimers.org",
+      content: "allforalzheimers@gmail.com",
+      link: "mailto:allforalzheimers@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      content: "(123) 456-7890",
-      link: "tel:+1234567890",
+      content: "515-525-3272",
+      link: "tel:5155253272",
     },
     {
       icon: MapPin,
       title: "Location",
-      content: "Nashville, TN",
+      content: "West Des Moines, Iowa",
       link: null,
     },
   ];

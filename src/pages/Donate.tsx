@@ -213,15 +213,6 @@ const Donate = () => {
                     Donate {isValidAmount ? `$${finalAmount}` : ""} via Venmo
                   </Button>
 
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="w-full text-lg"
-                    onClick={handlePayPal}
-                  >
-                    Donate {isValidAmount ? `$${finalAmount}` : ""} via PayPal
-                  </Button>
-
                   <button
                     type="button"
                     onClick={copyZelle}

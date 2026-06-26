@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Heart, Package, Users, Sparkles, CheckCircle2 } from "lucide-react";
+import { Heart, Package, Users, Sparkles, CheckCircle2, Copy } from "lucide-react";
 import { toast } from "sonner";
 
 const Donate = () => {

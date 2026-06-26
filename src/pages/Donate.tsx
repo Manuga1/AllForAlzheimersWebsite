@@ -45,22 +45,28 @@ const Donate = () => {
     },
   ];
 
-  const handleDonate = () => {
-    const finalAmount = amount === "custom" ? parseFloat(customAmount) : amount;
-    if (isNaN(finalAmount) || finalAmount <= 0) {
+  const finalAmount = amount === "custom" ? parseFloat(customAmount) : amount;
+  const isValidAmount = !isNaN(finalAmount) && finalAmount > 0;
+
+  const handleVenmo = () => {
+    if (!isValidAmount) {
       toast.error("Please enter a valid donation amount");
       return;
     }
+    window.open("https://venmo.com/u/allforalzheimers", "_blank");
+  };
 
-    // PayPal integration would go here
-    toast.success(`Thank you for your ${donationType} donation of $${finalAmount}!`, {
-      description: "Redirecting to PayPal...",
-    });
-    
-    // Simulate PayPal redirect
-    setTimeout(() => {
-      console.log("Redirecting to PayPal for", finalAmount);
-    }, 1500);
+  const handlePayPal = () => {
+    if (!isValidAmount) {
+      toast.error("Please enter a valid donation amount");
+      return;
+    }
+    toast.info("PayPal link coming soon!");
+  };
+
+  const copyZelle = () => {
+    navigator.clipboard.writeText("515-525-3272");
+    toast.success("Zelle phone number copied to clipboard!");
   };
 
   return (

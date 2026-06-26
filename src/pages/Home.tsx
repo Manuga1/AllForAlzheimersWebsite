@@ -11,10 +11,9 @@ import volunteersImage from "@/assets/volunteers.jpg";
 
 const Home = () => {
   const stats = [
-    { icon: Package, value: 1000, suffix: "+", label: "Care Packages Delivered" },
-    { icon: Users, value: 100, suffix: "+", label: "Active Volunteers" },
-    { icon: Heart, value: 200, suffix: "+", label: "Families Impacted" },
-    { icon: Calendar, value: 5, suffix: "+", label: "Events Hosted" },
+    { icon: Package, value: 100, suffix: "+", label: "Care Packages Delivered" },
+    { icon: Users, value: 50, suffix: "+", label: "Active Volunteers" },
+    { icon: Heart, value: 100, suffix: "+", label: "Families Impacted" },
   ];
 
   const impactAreas = [
